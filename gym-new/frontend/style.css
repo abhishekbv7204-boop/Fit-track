@@ -1,0 +1,393 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #172033;
+    background: blue#eef2f6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.login-screen {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: linear-gradient(135deg, #23395d, #1e7f73);
+}
+
+.login-panel {
+    width: min(380px, 100%);
+    padding: 32px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.login-panel h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+}
+
+.login-panel p {
+    margin: 0 0 24px;
+    color: #677083;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: 700;
+    color: #364157;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #c9d2df;
+    border-radius: 6px;
+    background: #ffffff;
+}
+
+.login-panel button,
+.topbar button,
+.dialog-actions button:last-child {
+    padding: 11px 16px;
+    border-radius: 6px;
+    color: #ffffff;
+    background: #1e7f73;
+    font-weight: 700;
+}
+
+#login-message {
+    min-height: 20px;
+    color: #c0392b;
+}
+
+.app-screen {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+}
+
+.sidebar {
+    padding: 24px 16px;
+    background: #172033;
+    color: #ffffff;
+}
+
+.sidebar h2 {
+    margin: 0 0 28px;
+    text-align: center;
+}
+
+.nav-button,
+.logout-button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    color: #dce4ef;
+    background: transparent;
+    text-align: left;
+}
+
+.nav-button.active,
+.nav-button:hover {
+    color: #ffffff;
+    background: #1e7f73;
+}
+
+.logout-button {
+    margin-top: 28px;
+    color: #ffffff;
+    background: #b33939;
+    text-align: center;
+}
+
+.content {
+    padding: 28px;
+    overflow-x: hidden;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.topbar p {
+    margin: 6px 0 0;
+    color: #677083;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.stats-grid article,
+.data-section,
+.plans-list article {
+    border: 1px solid #dbeade;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.stats-grid article {
+    padding: 20px;
+}
+
+.stats-grid span {
+    display: block;
+    color: #677083;
+}
+
+.stats-grid strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 26px;
+}
+
+.data-section {
+    margin-bottom: 22px;
+    padding: 20px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.section-heading p {
+    margin: 6px 0 0;
+    color: #677083;
+}
+
+.section-heading input {
+    max-width: 260px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 860px;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e5ebf2;
+    text-align: left;
+}
+
+th {
+    color: #4d5a70;
+    background: #f6f8fb;
+}
+
+.row-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-button,
+.delete-button,
+.delete-tuple-button {
+    padding: 7px 10px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.edit-button {
+    background: #d68b1f;
+}
+
+.delete-button,
+.delete-tuple-button {
+    background: #c0392b;
+}
+
+.plans-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+}
+
+.plans-list article {
+    padding: 18px;
+}
+
+.plans-list h3 {
+    margin: 0 0 8px;
+}
+
+.plans-list p {
+    margin: 5px 0;
+    color: #4d5a70;
+}
+
+.database-tables {
+    display: grid;
+    gap: 18px;
+}
+
+.database-card {
+    border: 1px solid greenyellow;
+    border-radius: 8px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.database-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid #e5ebf2;
+    background: #f9fbfd;
+}
+
+.database-card-header h3 {
+    margin: 0;
+}
+
+.database-card-header span {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    color: #1e7f73;
+    background: #e5f4f1;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.add-tuple-button {
+    padding: 9px 12px;
+    border-radius: 6px;
+    color: #ffffff;
+    background: #23395d;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.database-card .table-wrap {
+    padding: 0 16px 16px;
+}
+
+.database-card table {
+    min-width: 640px;
+}
+
+dialog {
+    width: min(460px, calc(100% - 32px));
+    border: 0;
+    border-radius: 8px;
+    padding: 0;
+}
+
+dialog::backdrop {
+    background: rgba(23, 32, 51, 0.55);
+}
+
+#member-form,
+#tuple-form {
+    padding: 24px;
+}
+
+#member-form h2,
+#tuple-form h2 {
+    margin: 0 0 12px;
+}
+
+#tuple-dialog-note {
+    margin: 0 0 14px;
+    color: #677083;
+}
+
+#tuple-fields {
+    display: grid;
+    gap: 10px;
+    max-height: 52vh;
+    overflow: auto;
+    padding-right: 4px;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.dialog-actions button {
+    padding: 10px 14px;
+    border-radius: 6px;
+}
+
+.dialog-actions button:first-child {
+    background: #e6ebf2;
+    color: #172033;
+}
+
+@media (max-width: 780px) {
+    .app-screen {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .topbar,
+    .section-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}

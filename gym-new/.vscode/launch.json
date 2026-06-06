@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run Gym Management System",
+      "request": "launch",
+      "mainClass": "com.gym.Main",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
+

@@ -1,0 +1,9 @@
+{
+  "java.project.sourcePaths": [
+    "gym-new/backend/src"
+  ],
+  "java.project.outputPath": "gym-new/backend/bin",
+  "java.project.referencedLibraries": [
+    "gym-new/lib/**/*.jar"
+  ]
+}

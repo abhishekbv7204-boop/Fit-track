@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="login-screen" class="login-screen">
+        <section class="login-panel">
+            <h1>Gym Management</h1>
+            <p>Staff Login</p>
+            <form id="login-form">
+                <label for="username">Username</label>
+                <input id="username" type="text" value="admin" required>
+
+                <label for="password">Password</label>
+                <input id="password" type="password" value="admin123" required>
+
+                <button type="submit">Log In</button>
+                <span id="login-message"></span>
+            </form>
+        </section>
+    </main>
+
+    <main id="app-screen" class="app-screen hidden">
+        <aside class="sidebar">
+            <h2>Gym Fit</h2>
+            <button class="nav-button active" data-view="dashboard">Dashboard</button>
+            <button class="nav-button" data-view="members">Members</button>
+            <button class="nav-button" data-view="plans">Plans</button>
+            <button class="nav-button" data-view="database">Database Tables</button>
+            <button id="logout-button" class="logout-button">Logout</button>
+        </aside>
+
+        <section class="content">
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>View Java JDBC data from all MySQL tables</p>
+                </div>
+                <button id="add-member-button">Add Member</button>
+            </header>
+
+            <section id="dashboard-view" class="stats-grid">
+                <article>
+                    <span>Total Members</span>
+                    <strong id="total-members">0</strong>
+                </article>
+                <article>
+                    <span>Plans</span>
+                    <strong id="total-plans">0</strong>
+                </article>
+                <article>
+                    <span>Latest Member</span>
+                    <strong id="latest-member">None</strong>
+                </article>
+                <article>
+                    <span>Trainers</span>
+                    <strong id="total-trainers">0</strong>
+                </article>
+                <article>
+                    <span>Payments</span>
+                    <strong id="total-payments">0</strong>
+                </article>
+                <article>
+                    <span>Attendance</span>
+                    <strong id="total-attendance">0</strong>
+                </article>
+            </section>
+
+            <section id="members-view" class="data-section">
+                <div class="section-heading">
+                    <h2>Members</h2>
+                    <input id="member-search" type="search" placeholder="Search members">
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Plan</th>
+                                <th>Join Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="members-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="plans-view" class="data-section">
+                <div class="section-heading">
+                    <h2>Plans</h2>
+                </div>
+                <div id="plans-list" class="plans-list"></div>
+            </section>
+
+            <section id="database-view" class="data-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Database Tables and Tuples</h2>
+                        <p>These rows are loaded from MySQL using Java JDBC.</p>
+                    </div>
+                </div>
+                <div id="database-tables" class="database-tables"></div>
+            </section>
+        </section>
+    </main>
+
+    <dialog id="member-dialog">
+        <form id="member-form" method="dialog">
+            <h2 id="dialog-title">Add Member</h2>
+            <input id="member-id" type="hidden">
+
+            <label for="member-name">Name</label>
+            <input id="member-name" type="text" pattern="[A-Za-z ]+" title="Name must contain only letters and spaces" required>
+
+            <label for="member-age">Age</label>
+            <input id="member-age" type="number" min="1" required>
+
+            <label for="member-gender">Gender</label>
+            <select id="member-gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="member-phone">Phone</label>
+            <input id="member-phone" type="tel" required>
+
+            <label for="member-email">Email</label>
+            <input id="member-email" type="email" required>
+
+            <label for="member-plan">Plan</label>
+            <select id="member-plan" required></select>
+
+            <div class="dialog-actions">
+                <button id="cancel-dialog" type="button">Cancel</button>
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="tuple-dialog">
+        <form id="tuple-form" method="dialog">
+            <h2 id="tuple-dialog-title">Add Tuple</h2>
+            <p id="tuple-dialog-note">Enter values for the selected MySQL table.</p>
+            <div id="tuple-fields"></div>
+
+            <div class="dialog-actions">
+                <button id="cancel-tuple-dialog" type="button">Cancel</button>
+                <button type="submit">Insert Tuple</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>
