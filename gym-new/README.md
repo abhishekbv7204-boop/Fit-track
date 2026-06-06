@@ -88,7 +88,7 @@ If they are not present, it uses:
 ```text
 jdbc:mysql://localhost:3306/gym_db
 root
-Abhi@9141
+password: ---
 ```
 
 You can change these values in:
