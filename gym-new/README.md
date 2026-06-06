@@ -1,4 +1,4 @@
-# Gym Management System
+# Fit-Track
 
 This is a simple college-project Gym Management System built with:
 
